@@ -1,0 +1,21 @@
+- type: entity
+  save: false
+  name: Urist McFox
+  parent: MobKitsuneFox
+  id: FoxFormBase
+  abstract: true
+  roundStart: false
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: SimpleStation14/Mobs/Customization/Kitsune/foxform.rsi
+    layers:
+    - shader: StencilMask
+      map: [ "enum.HumanoidVisualLayers.StencilMask" ]
+      sprite: SimpleStation14/Mobs/Customization/Kitsune/kitsune_masking_helpers.rsi
+      state: mask
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: kitsune_fox_body
+    - map: ["enum.HumanoidVisualLayers.FoxForm"]
+  - type: HumanoidAppearance
+    species: KitsuneFox

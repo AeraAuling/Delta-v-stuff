@@ -1,0 +1,59 @@
+# All the Kitsune customization
+
+# Tail Markings
+- type: marking
+  id: KitsuneTailDefault
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [Kitsune]
+  coloring:
+    default:
+      type:
+        !type:CategoryColoring
+          category: Hair
+      fallbackTypes:
+        - !type:SimpleColoring
+          color: "#fffafa"
+  sprites:
+    - sprite: SimpleStation14/Mobs/Customization/Kitsune/tails.rsi
+      state: fluffy_tail_reshaded
+
+# Ear Markings
+
+- type: marking
+  id: KitsuneEarsDefault
+  bodyPart: Head
+  markingCategory: HeadTop
+  speciesRestriction: [Kitsune]
+  coloring:
+    default:
+      type:
+        !type:CategoryColoring
+          category: Hair
+      fallbackTypes:
+        - !type:SimpleColoring
+          color: "#fffafa"
+  sprites:
+    - sprite: SimpleStation14/Mobs/Customization/Kitsune/ears.rsi
+      state: kitsune_fluffy_ears
+    - sprite: SimpleStation14/Mobs/Customization/Kitsune/ears.rsi
+      state: kitsune_fluffy_fluff
+
+- type: marking
+  id: KitsuneFoxDefault
+  bodyPart: FoxForm
+  markingCategory: FoxForm
+  speciesRestriction: [Kitsune]
+  coloring:
+    default:
+      type:
+        !type:CategoryColoring
+          category: Hair
+      fallbackTypes:
+        - !type:SimpleColoring
+          color: "#fffafa"
+  sprites:
+    - sprite: SimpleStation14/Mobs/Customization/Kitsune/foxform.rsi
+      state: kitsune_fox_body
+    - sprite: SimpleStation14/Mobs/Customization/Kitsune/foxform.rsi
+      state: kitsune_fox_innerear

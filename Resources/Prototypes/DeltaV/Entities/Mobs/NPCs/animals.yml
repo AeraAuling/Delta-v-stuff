@@ -179,3 +179,99 @@
   - type: Vocal
     sounds:
       Unsexed: MobDog
+
+- type: entity
+  name: kitsune fox form
+  parent: BaseMobHuman
+  id: MobKitsuneFox
+  description: They're a fox.
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: SimpleStation14/Mobs/Customization/Kitsune/foxform.rsi
+    layers:
+    - shader: StencilMask
+      map: [ "enum.HumanoidVisualLayers.StencilMask" ]
+      sprite: SimpleStation14/Mobs/Customization/Kitsune/kitsune_masking_helpers.rsi
+      state: mask
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: kitsune_fox_body
+    - map: ["enum.HumanoidVisualLayers.FoxForm"]
+  - type: Physics
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 50 #They actually are pretty light, I looked it up
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: Inventory
+    speciesId: kitsunefox
+    templateId: kitsunefox
+  - type: MeleeWeapon
+    soundHit:
+      path: /Audio/Items/hiss.ogg
+    animation: WeaponArcClaw
+    damage:
+      types:
+        Heat: 5
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: fox
+      Dead:
+        Base: fox_dead
+  - type: Butcherable
+    spawned:
+    - id: FoodMeat
+      amount: 3
+  - type: InteractionPopup
+    successChance: 0.5
+    interactSuccessString: petting-success-soft-floofy-kitsune
+    interactFailureString: petting-failure-generic
+    interactSuccessSpawn: EffectHearts
+    interactSuccessSound:
+      path: /Audio/Animals/fox_squeak.ogg
+  - type: Grammar
+    attributes:
+      gender: epicene
+  - type: Bloodstream
+    bloodMaxVolume: 100
+  - type: Tag
+    tags:
+    - CannotSuicide
+    - VimPilot
+    - DoorBumpOpener
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      85: Critical
+      170: Dead
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 2.75
+    baseSprintSpeed: 5
+  - type: AlwaysRevolutionaryConvertible
+  - type: Puller
+    needsHands: false
+  - type: Speech
+    speechSounds: Alto
+  - type: Icon
+    sprite: Mobs/Animals/fox.rsi
+    state: fox
+  - type: Temperature
+    heatDamageThreshold: 400
+    coldDamageThreshold: 230
+    currentTemperature: 310.15
+    specificHeat: 42
+    coldDamage:
+      types:
+        Cold: 0.1 #per second, scales with temperature & other constants
+    heatDamage:
+      types:
+        Heat: 0.1 #per second, scales with temperature & other constants
+  - type: HumanoidAppearance
+    species: KitsuneFox
