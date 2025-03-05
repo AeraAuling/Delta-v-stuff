@@ -51,6 +51,5 @@ public sealed class KitsuneSystem : EntitySystem
     {
         Log.Error("Fire didn't break");
         component.ActiveFoxFires.Remove(uid);
-        //_actions.AddCharges(component.FoxfireAction, 1);
     }
 }
