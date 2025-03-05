@@ -59,21 +59,21 @@
             "name": "chitinid2"
         },
         {
-            "name": "kitsune0",
+            "name": "thaven1"
+        },
+        {
+            "name": "thaven2"
+        },
+        {
+            "name": "thaven0",
             "delays": [
                 [
                     0.2,
                     0.3,
                     0.3,
-                    0.5
+                    0.3
                 ]
             ]
-        },
-        {
-            "name": "kitsune1"
-        },
-        {
-            "name": "kitsune2"
         }
     ]
 }
