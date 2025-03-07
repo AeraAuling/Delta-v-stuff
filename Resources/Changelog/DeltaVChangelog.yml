@@ -1,34 +1,4 @@
 ﻿Entries:
-- author: Radezolid
-  changes:
-  - message: Now tracking and death rattle implant messages show the coordinates at
-      the same time as the nearest beacon.
-    type: Tweak
-  id: 608
-  time: '2024-10-14T18:06:50.0000000+00:00'
-  url: https://github.com/DeltaV-Station/Delta-v/pull/1983
-- author: Radezolid
-  changes:
-  - message: Added the foam toys set to the cargo request catalog! Go play war with
-      the clown or friends in the hallways!
-    type: Add
-  id: 609
-  time: '2024-10-14T18:07:41.0000000+00:00'
-  url: https://github.com/DeltaV-Station/Delta-v/pull/1985
-- author: MilonPL
-  changes:
-  - message: Glimmer mobs will no longer spawn on CentCom or the evac shuttle.
-    type: Fix
-  id: 610
-  time: '2024-10-14T23:43:17.0000000+00:00'
-  url: https://github.com/DeltaV-Station/Delta-v/pull/1980
-- author: Radezolid
-  changes:
-  - message: The tracking implants crate is now more expensive.
-    type: Tweak
-  id: 611
-  time: '2024-10-15T23:01:23.0000000+00:00'
-  url: https://github.com/DeltaV-Station/Delta-v/pull/2011
 - author: Unkn0wnGh0st333
   changes:
   - message: Chemistry and Hydroponics doors have been readded
@@ -3917,3 +3887,34 @@
   id: 1107
   time: '2025-03-05T01:49:50.0000000+00:00'
   url: https://github.com/DeltaV-Station/Delta-v/pull/2842
+- author: deltanedas
+  changes:
+  - message: Replaced the security borg lawset with a better one.
+    type: Tweak
+  id: 1108
+  time: '2025-03-05T20:27:57.0000000+00:00'
+  url: https://github.com/DeltaV-Station/Delta-v/pull/3113
+- author: deltanedas
+  changes:
+  - message: Borg hand items are now much nicer to pick up and drop. (They are predicted
+      now)
+    type: Tweak
+  id: 1109
+  time: '2025-03-06T01:45:33.0000000+00:00'
+  url: https://github.com/DeltaV-Station/Delta-v/pull/3126
+- author: deltanedas
+  changes:
+  - message: Fixed implanter dealing damage if someone had no implants and having
+      a UI.
+    type: Fix
+  id: 1110
+  time: '2025-03-06T15:24:32.0000000+00:00'
+  url: https://github.com/DeltaV-Station/Delta-v/pull/3133
+- author: deltanedas
+  changes:
+  - message: Cyborg's lock access is now command robotics and the relevant department,
+      scientists can no longer unlock every borg.
+    type: Tweak
+  id: 1111
+  time: '2025-03-06T20:56:39.0000000+00:00'
+  url: https://github.com/DeltaV-Station/Delta-v/pull/3111
