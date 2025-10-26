@@ -1,0 +1,38 @@
+- type: entity
+  id: VoidSlime
+  name: void slime
+  parent: BaseMobAdultSlimes
+  description: A... mold slime?
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _DV/Mobs/Aliens/Shadows/shadowslime.rsi
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: shadow_adult_slime
+  - type: NpcFactionMember
+    factions:
+      - SimpleHostile
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      50: Dead
+  - type: MeleeWeapon
+    altDisarm: false
+    soundHit:
+        path: /Audio/Weapons/punch3.ogg
+    angle: 0
+    animation: WeaponArcPunch
+    damage:
+      types:
+        Poison: 2
+        Shadow: 3
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: shadow_adult_slime
+      Dead:
+        Base: shadow_adult_slime_dead
+  - type: HTN
+    rootTask:
+      task: SimpleHostileCompound
