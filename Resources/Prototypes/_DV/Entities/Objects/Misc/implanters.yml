@@ -58,3 +58,13 @@
   components:
   - type: Implanter
     implant: NukeopsUplinkImplant
+
+# Psionic implants
+
+- type: entity
+  parent: BaseImplantOnlyImplanter
+  id: NoosphericZapImplanter
+  name: noospheric zap implanter
+  components:
+  - type: Implanter
+    implant: ZapImplant

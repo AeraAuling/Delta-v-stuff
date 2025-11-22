@@ -78,6 +78,8 @@ flavor-complex-vodka-tonic-deltav = like depression in denial
 flavor-complex-kvass-deltav = like bread tossed into a blender
 flavor-complex-mothamphetamine-deltav = like there are buzzing wings in your mouth
 flavor-complex-unholy-water = like something cold and wrong
+flavor-complex-pure = like the purest water
+flavor-complex-clarifying = like an old memory you remember clearly
 
 candy-flavor-profile = This one is supposed to taste {$flavor}.
 candy-flavor-profile-multiple = This one is supposed to taste {$flavors} and {$lastFlavor}.

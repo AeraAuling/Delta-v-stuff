@@ -1,0 +1,58 @@
+- type: reagent
+  id: PureOil
+  name: reagent-name-pure-oil
+  group: Narcotics
+  desc: reagent-desc-pure-oil
+  flavor: Pure
+  color: "#fffefb"
+  physicalDesc: reagent-physical-desc-pure
+  metabolisms:
+    Narcotic:
+      metabolismRate: 0.2
+      effects:
+      - !type:ChemRerollPsionic
+        bonusMultiplier: 4
+        conditions:
+        - !type:ReagentThreshold
+          reagent: PureOil
+          min: 20
+
+- type: reagent
+  id: Claridisol
+  name: reagent-name-claridisol
+  group: Exotic
+  desc: reagent-desc-claridisol
+  flavor: Clarifying
+  color: "#ae7ccf"
+  physicalDesc: reagent-physical-desc-clarifying
+  metabolisms:
+    Narcotic:
+      metabolismRate: 0.5
+      effects:
+      - !type:ChemRerollPsionic
+        bonusMultiplier: 1
+        conditions:
+        - !type:ReagentThreshold
+          reagent: Claridisol
+          min: 40
+
+- type: reagent
+  id: ZapOil
+  name: reagent-name-zap-oil
+  group: Narcotics
+  desc: reagent-desc-zap-oil
+  flavor: zappy
+  color: "#FFBF00"
+  physicalDesc: reagent-physical-desc-overpowering
+  metabolisms:
+    Narcotic:
+      metabolismRate: 0.2
+      effects:
+      - !type:GenericStatusEffect
+        key: PowerAdd
+        component: NoosphericZapPower
+        type: Add
+        conditions:
+        - !type:ReagentThreshold
+          reagent: ZapOil
+          min: 20

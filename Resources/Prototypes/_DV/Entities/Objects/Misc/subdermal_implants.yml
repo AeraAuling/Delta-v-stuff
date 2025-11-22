@@ -125,3 +125,16 @@
   - type: Tag
     tags:
     - NukeOpsUplink
+
+# Psionic Implants
+- type: entity
+  parent: BaseSubdermalImplant
+  id: ZapImplant
+  name: noospheric zap implant
+  description: This implant grants the ability to use the psionic power noospheric
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: AddComponentsImplant
+    componentsToAdd:
+    - type: NoosphericZapPower
+    - type: Psionic

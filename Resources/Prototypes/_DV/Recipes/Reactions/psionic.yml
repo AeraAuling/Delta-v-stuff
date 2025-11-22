@@ -34,3 +34,13 @@
       entity: CrystalNormality
     - !type:ChangeGlimmerReactionEffect
       count: -10
+
+- type: reaction
+  id: CreatePureOil
+  reactants:
+    LotophagoiOil:
+      amount: 5
+    Claridisol:
+      amount: 5
+  products:
+    PureOil: 10

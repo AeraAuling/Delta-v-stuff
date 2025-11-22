@@ -1,0 +1,97 @@
+- type: entity
+  id: HandheldChemmaster
+  parent: BaseItem
+  name: handheld chemMaster
+  description: A portable chemmaster for holding and preparing chemicals in an emergency. It has less storage space then the standard due to it's handheld size.
+  components:
+  - type: Item
+    size: Huge
+    sprite: Objects/Tools/handheld_mass_scanner.rsi
+  - type: Sprite
+    sprite: Objects/Tools/handheld_mass_scanner.rsi
+    state: icon
+    layers:
+      - state: icon
+      - state: scanner
+        shader: unshaded
+        visible: false
+        map: [ "enum.PowerDeviceVisualLayers.Powered" ]
+  - type: ItemMapper
+    containerWhitelist: [beakerSlot]
+    mapLayers:
+      mixer_loaded:
+        whitelist:
+          components:
+          - FitsInDispenser
+  - type: ChemMaster
+    pillDosageLimit: 20
+  - type: Physics
+    bodyType: Dynamic
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.4,0.25,0.4"
+        density: 190
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer
+  - type: ActivatableUI
+    key: enum.ChemMasterUiKey.Key
+    inHandsOnly: true
+    singleUser: true
+  - type: UserInterface
+    interfaces:
+      enum.ChemMasterUiKey.Key:
+        type: ChemMasterBoundUserInterface
+  - type: ApcPowerReceiver
+    needsPower: false
+    powerLoad: 250
+  - type: Appearance
+  - type: ContainerContainer
+    containers:
+      beakerSlot: !type:ContainerSlot
+      outputSlot: !type:ContainerSlot
+      machine_board: !type:Container
+      machine_parts: !type:Container
+  - type: ItemSlots
+    slots:
+      beakerSlot:
+        whitelist:
+          components:
+          - FitsInDispenser
+      outputSlot:
+        whitelistFailPopup: chem-master-component-cannot-put-entity-message
+        whitelist:
+          tags:
+          - Bottle
+          - PillCanister
+  - type: SolutionContainerManager
+    solutions:
+      buffer:
+        maxVol: 1000
+        canReact: false
+  - type: DumpableSolution
+    solution: buffer
+    unlimited: true
+  - type: GuideHelp
+    guides:
+    - Chemicals
+    - Chemist
+
+- type: entity
+  id: MantisChemmaster
+  parent: HandheldChemmaster
+  name: mantis chem mixer
+  description: A budget version of the handheld chemmaster provided to Psionic Mantis' for the purposes of managing psionic chemicals.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      buffer:
+        maxVol: 500
+        canReact: false
+  - type: DumpableSolution
+    solution: buffer
+    unlimited: false
