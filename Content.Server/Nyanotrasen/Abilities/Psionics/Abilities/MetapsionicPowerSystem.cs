@@ -49,6 +49,11 @@ namespace Content.Server.Abilities.Psionics
 
         private void OnPowerUsed(EntityUid uid, MetapsionicPowerComponent component, MetapsionicPowerActionEvent args)
         {
+            if (TryComp<PsionicComponent>(uid, out var psionic) && psionic.PsionicAbility == null)
+            {
+                psionic.PsionicAbility = component.MetapsionicActionEntity;
+                psionic.ActivePowers.Add(component);
+            }
             foreach (var entity in _lookup.GetEntitiesInRange(uid, component.Range))
             {
                 if (HasComp<PsionicComponent>(entity) && entity != uid && !HasComp<PsionicInsulationComponent>(entity) &&

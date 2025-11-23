@@ -63,8 +63,64 @@
 
 - type: entity
   parent: BaseImplantOnlyImplanter
-  id: NoosphericZapImplanter
+  id: PsionicImplanterZap
   name: noospheric zap implanter
   components:
   - type: Implanter
-    implant: ZapImplant
+    implant: PsionicImplantZap
+
+- type: entity
+  parent: BaseImplantOnlyImplanter
+  id: PsionicImplanterTelegnosis
+  name: telegnosis implanter
+  components:
+  - type: Implanter
+    implant: PsionicImplantTelegnosis
+
+- type: entity
+  parent: BaseImplantOnlyImplanter
+  id: PsionicImplanterPrecog
+  name: precognition implanter
+  components:
+  - type: Implanter
+    implant: PsionicImplantPrecog
+
+- type: entity
+  parent: BaseImplantOnlyImplanter
+  id: PsionicImplanterPsychokinetic
+  name: psychokinetic scream implanter
+  components:
+  - type: Implanter
+    implant: PsionicImplantPsychokinetic
+
+- type: entity
+  parent: BaseImplantOnlyImplanter
+  id: PsionicImplanterDispel
+  name: dispel implanter
+  components:
+  - type: Implanter
+    implant: PsionicImplantDispel
+
+- type: entity
+  parent: BaseImplantOnlyImplanter
+  id: PsionicImplanterMetapsionic
+  name: metapsionic pulse implanter
+  components:
+  - type: Implanter
+    implant: PsionicImplantPulse
+
+- type: entity
+  parent: BaseImplantOnlyImplanter
+  id: PsionicImplanterRegen
+  name: psionic regeneration implanter
+  components:
+  - type: Implanter
+    implant: PsionicImplantRegen
+
+- type: entity
+  parent: BaseImplantOnlyImplanter
+  id: PsionicImplanterPyro
+  name: pyrokinesis implanter
+  components:
+  - type: Implanter
+    implant: PsionicImplantPyro

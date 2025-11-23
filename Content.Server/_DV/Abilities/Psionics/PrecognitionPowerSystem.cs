@@ -75,6 +75,11 @@ public sealed class PrecognitionPowerSystem : EntitySystem
 
     private void OnPowerUsed(EntityUid uid, PrecognitionPowerComponent component, PrecognitionPowerActionEvent args)
     {
+        if (TryComp<PsionicComponent>(uid, out var psionic) && psionic.PsionicAbility == null)
+        {
+            psionic.PsionicAbility = component.PrecognitionActionEntity;
+            psionic.ActivePowers.Add(component);
+        }
         var ev = new PrecognitionDoAfterEvent();
         var doAfterArgs = new DoAfterArgs(EntityManager, uid, component.UseDelay, ev, uid)
         {

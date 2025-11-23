@@ -36,7 +36,7 @@ namespace Content.Server.Abilities.Psionics
             base.Initialize();
             SubscribeLocalEvent<DispelPowerComponent, ComponentInit>(OnInit);
             SubscribeLocalEvent<DispelPowerComponent, ComponentShutdown>(OnShutdown);
-            SubscribeLocalEvent<DispelPowerActionEvent>(OnPowerUsed);
+            SubscribeLocalEvent<DispelPowerComponent, DispelPowerActionEvent>(OnPowerUsed);
 
             SubscribeLocalEvent<DispellableComponent, DispelledEvent>(OnDispelled);
             SubscribeLocalEvent<DamageOnDispelComponent, DispelledEvent>(OnDmgDispelled);
@@ -74,8 +74,13 @@ namespace Content.Server.Abilities.Psionics
             }
         }
 
-        private void OnPowerUsed(DispelPowerActionEvent args)
+        private void OnPowerUsed(EntityUid uid, DispelPowerComponent component, DispelPowerActionEvent args)
         {
+            if (TryComp<PsionicComponent>(uid, out var psionic) && psionic.PsionicAbility == null)
+            {
+                psionic.PsionicAbility = component.DispelActionEntity;
+                psionic.ActivePowers.Add(component);
+            }
             if (HasComp<PsionicInsulationComponent>(args.Target))
                 return;
 

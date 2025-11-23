@@ -113,12 +113,12 @@
 
 - type: entity
   parent: BaseMagazinePistolSpecial
-  id: MagazinePistolSpecialMindbreaker
-  name: pistol magazine (.38 special mindbreaker)
+  id: MagazinePistolSpecialCryptobiolin
+  name: pistol magazine (.38 special cryptobiolin)
   description: 5-round single-stack magazine for the psi-breaker pistol. Intended to hold psionic-removing mindbreaker ammunition.
   components:
   - type: BallisticAmmoProvider
-    proto: CartridgeSpecialMindbreaker
+    proto: CartridgeSpecialCryptobiolin
   - type: Sprite
     layers:
     - state: mindbreaker

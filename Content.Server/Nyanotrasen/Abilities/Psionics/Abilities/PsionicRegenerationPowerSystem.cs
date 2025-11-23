@@ -67,6 +67,11 @@ namespace Content.Server.Abilities.Psionics
 
         private void OnPowerUsed(EntityUid uid, PsionicRegenerationPowerComponent component, PsionicRegenerationPowerActionEvent args)
         {
+            if (TryComp<PsionicComponent>(uid, out var psionic) && psionic.PsionicAbility == null)
+            {
+                psionic.PsionicAbility = component.PsionicRegenerationActionEntity;
+                psionic.ActivePowers.Add(component);
+            }
             var ev = new PsionicRegenerationDoAfterEvent(_gameTiming.CurTime);
             var doAfterArgs = new DoAfterArgs(EntityManager, uid, component.UseDelay, ev, uid);
 

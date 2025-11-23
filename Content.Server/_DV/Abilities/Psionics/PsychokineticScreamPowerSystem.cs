@@ -44,6 +44,11 @@ public sealed partial class PsychokineticScreamPowerSystem : EntitySystem
 
     private void OnShatterLightsAction(Entity<PsychokineticScreamPowerComponent> entity, ref ShatterLightsActionEvent args)
     {
+        if (TryComp<PsionicComponent>(entity, out var psionic) && psionic.PsionicAbility == null)
+        {
+            psionic.PsionicAbility = entity.Comp.PsychokineticScreamActionEntity;
+            psionic.ActivePowers.Add(entity.Comp);
+        }
         if (args.Handled)
             return;
 

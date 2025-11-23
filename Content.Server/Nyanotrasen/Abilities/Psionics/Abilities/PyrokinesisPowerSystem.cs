@@ -25,7 +25,7 @@ namespace Content.Server.Abilities.Psionics
             base.Initialize();
             SubscribeLocalEvent<PyrokinesisPowerComponent, ComponentInit>(OnInit);
             SubscribeLocalEvent<PyrokinesisPowerComponent, ComponentShutdown>(OnShutdown);
-            SubscribeLocalEvent<PyrokinesisPowerActionEvent>(OnPowerUsed);
+            SubscribeLocalEvent<PyrokinesisPowerComponent, PyrokinesisPowerActionEvent>(OnPowerUsed);
         }
 
         private void OnInit(EntityUid uid, PyrokinesisPowerComponent component, ComponentInit args)
@@ -53,8 +53,13 @@ namespace Content.Server.Abilities.Psionics
             }
         }
 
-        private void OnPowerUsed(PyrokinesisPowerActionEvent args)
+        private void OnPowerUsed(EntityUid uid, PyrokinesisPowerComponent component, PyrokinesisPowerActionEvent args)
         {
+            if (TryComp<PsionicComponent>(uid, out var psionic) && psionic.PsionicAbility == null)
+            {
+                psionic.PsionicAbility = component.PyrokinesisActionEntity;
+                psionic.ActivePowers.Add(component);
+            }
             if (!TryComp<FlammableComponent>(args.Target, out var flammableComponent))
                 return;
 

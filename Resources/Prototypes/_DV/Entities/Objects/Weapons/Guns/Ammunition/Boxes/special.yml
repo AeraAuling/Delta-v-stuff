@@ -105,12 +105,12 @@
 
 - type: entity
   parent: BaseMagazineBoxSpecial
-  id: MagazineBoxSpecialMindbreaker
-  name: ammunition box (.38 special mindbreaker)
-  description: A cardboard box of .38 special rounds. Intended to hold psionic-removing mindbreaker ammunition.
+  id: MagazineBoxSpecialCryptobiolin
+  name: ammunition box (.38 special Cryptobiolin)
+  description: A cardboard box of .38 special rounds. Intended to hold psionic-suppressing cryptobiolin ammunition.
   components:
   - type: BallisticAmmoProvider
-    proto: CartridgeSpecialMindbreaker
+    proto: CartridgeSpecialCryptobiolin
   - type: Sprite
     layers:
     - state: base
@@ -120,7 +120,7 @@
     - state: mindbreaker
 
 - type: entity
-  parent: MagazineBoxSpecialMindbreaker
+  parent: MagazineBoxSpecialCryptobiolin
   id: MagazineBoxSpecialHoly
   name: ammunition box (.38 special holy)
   description: A cardboard box of .38 special rounds. Intended to hold anti-paranormal entity ammunition.

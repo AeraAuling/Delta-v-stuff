@@ -107,12 +107,12 @@
 
 - type: entity
   parent: BaseCartridgeSpecial
-  id: CartridgeSpecialMindbreaker
-  name: cartridge (.38 special mindbreaker)
-  description: A compact revolver cartridge lighter than its magnum cousin. Mindbreaker-soaked rounds forcibly rid targets of psionic abilities.
+  id: CartridgeSpecialCryptobiolin
+  name: cartridge (.38 special Cryptobiolin)
+  description: A compact revolver cartridge lighter than its magnum cousin. Cryptobiolin-soaked rounds forcibly shut down a target's psionic abilities.
   components:
   - type: CartridgeAmmo
-    proto: BulletSpecialMindbreaker
+    proto: BulletSpecialCryptobiolin
   - type: Sprite
     layers:
     - state: base
@@ -125,7 +125,7 @@
     solutions:
       ammo:
         reagents:
-        - ReagentId: MindbreakerToxin
-          Quantity: 9
+        - ReagentId: Cryptobiolin
+          Quantity: 5
   - type: SolutionTransfer
-    maxTransferAmount: 9
+    maxTransferAmount: 5
