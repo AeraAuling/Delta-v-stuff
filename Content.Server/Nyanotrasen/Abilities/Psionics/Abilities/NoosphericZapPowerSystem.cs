@@ -17,7 +17,7 @@ namespace Content.Server.Abilities.Psionics
             base.Initialize();
             SubscribeLocalEvent<NoosphericZapPowerComponent, ComponentInit>(OnInit);
             SubscribeLocalEvent<NoosphericZapPowerComponent, ComponentShutdown>(OnShutdown);
-            SubscribeLocalEvent<NoosphericZapPowerActionEvent>(OnPowerUsed);
+            SubscribeLocalEvent<NoosphericZapPowerComponent, NoosphericZapPowerActionEvent>(OnPowerUsed);
         }
 
         private void OnInit(EntityUid uid, NoosphericZapPowerComponent component, ComponentInit args)
@@ -45,8 +45,13 @@ namespace Content.Server.Abilities.Psionics
             }
         }
 
-        private void OnPowerUsed(NoosphericZapPowerActionEvent args)
+        private void OnPowerUsed(EntityUid uid, NoosphericZapPowerComponent component, NoosphericZapPowerActionEvent args)
         {
+            if (TryComp<PsionicComponent>(uid, out var psionic) && psionic.PsionicAbility == null)
+            {
+                psionic.PsionicAbility = component.NoosphericZapActionEntity;
+                psionic.ActivePowers.Add(component);
+            }
             if (!HasComp<PotentialPsionicComponent>(args.Target))
                 return;
 

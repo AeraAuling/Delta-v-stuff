@@ -35,24 +35,3 @@
         - !type:ReagentThreshold
           reagent: Claridisol
           min: 40
-
-- type: reagent
-  id: ZapOil
-  name: reagent-name-zap-oil
-  group: Narcotics
-  desc: reagent-desc-zap-oil
-  flavor: zappy
-  color: "#FFBF00"
-  physicalDesc: reagent-physical-desc-overpowering
-  metabolisms:
-    Narcotic:
-      metabolismRate: 0.2
-      effects:
-      - !type:GenericStatusEffect
-        key: PowerAdd
-        component: NoosphericZapPower
-        type: Add
-        conditions:
-        - !type:ReagentThreshold
-          reagent: ZapOil
-          min: 20

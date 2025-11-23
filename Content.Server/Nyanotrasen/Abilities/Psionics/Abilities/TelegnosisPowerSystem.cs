@@ -64,6 +64,11 @@ namespace Content.Server.Abilities.Psionics
 
         private void OnPowerUsed(EntityUid uid, TelegnosisPowerComponent component, TelegnosisPowerActionEvent args)
         {
+            if (TryComp<PsionicComponent>(uid, out var psionic) && psionic.PsionicAbility == null)
+            {
+                psionic.PsionicAbility = component.TelegnosisActionEntity;
+                psionic.ActivePowers.Add(component);
+            }
             var projection = Spawn(component.Prototype, Transform(uid).Coordinates);
 
             _transform.AttachToGridOrMap(projection);

@@ -81,6 +81,7 @@ public sealed class SharedPsionicAbilitiesSystem : EntitySystem
     private bool IsEligibleForPsionics(EntityUid uid)
     {
         return !HasComp<PsionicInsulationComponent>(uid)
+            && !HasComp<PsionicsDisabledComponent>(uid)
             && (!TryComp<MobStateComponent>(uid, out var mobstate) || mobstate.CurrentState == MobState.Alive);
     }
 
