@@ -5,7 +5,7 @@
   description: A synthesizer that makes a continuous supply of claridisol
   components:
   - type: Sprite
-    sprite: _Impstation/Objects/Specific/Syndicate/echionsynth.rsi
+    sprite: _DV/Objects/Specific/Psionic/claridisolsynth.rsi
     layers:
       - state: base
         map: ["enum.GunVisualLayers.Base"]
@@ -83,4 +83,4 @@
     - type: PointLight
       radius: 1.5
       energy: 1.5
-      color: "#83db2b"
+      color: "#950cb8"

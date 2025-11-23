@@ -88,8 +88,8 @@
   components:
     - type: Tag
       tags:
-        - Trash # DeltaV - for use in the crafting system
-        - Implanter
+        - Trash
+        - Implanter # DeltaV - For use in the crafting system
 
 - type: entity
   parent: Implanter
