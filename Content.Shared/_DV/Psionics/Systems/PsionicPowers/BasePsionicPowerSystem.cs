@@ -42,7 +42,7 @@ public abstract class BasePsionicPowerSystem<T, T1> : EntitySystem where T : Bas
     /// <param name="args">The args from the event.</param>
     private void OnPowerInit(Entity<T> power, ref MapInitEvent args)
     {
-        ActionSystem.AddAction(power, ref power.Comp.ActionEntity, power.Comp.ActionProtoId );
+        ActionSystem.AddAction(power, ref power.Comp.ActionEntity, power.Comp.ActionProtoId);
 
         var psionicComp = EnsureComp<PsionicComponent>(power);
         psionicComp.PsionicPowersActionEntities.Add(power.Comp.ActionEntity);
@@ -53,7 +53,7 @@ public abstract class BasePsionicPowerSystem<T, T1> : EntitySystem where T : Bas
     /// </summary>
     /// <param name="psionic">The psionic who attempts to use a psionic power.</param>
     /// <param name="args">The action event for said power.</param>
-    private void OnPowerActionUsed(Entity<T> psionic,  ref T1 args)
+    private void OnPowerActionUsed(Entity<T> psionic, ref T1 args)
     {
         var ev = new PsionicPowerUseAttemptEvent();
         RaiseLocalEvent(psionic.Owner, ref ev);

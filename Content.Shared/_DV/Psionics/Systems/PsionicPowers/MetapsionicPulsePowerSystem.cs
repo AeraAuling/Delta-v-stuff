@@ -8,7 +8,7 @@ using Content.Shared.Popups;
 
 namespace Content.Shared._DV.Psionics.Systems.PsionicPowers;
 
-public sealed partial class MetapsionicPulsePowerSystem : BasePsionicPowerSystem<MetapsionicPulsePowerComponent,  MetapsionicPulseActionEvent>
+public sealed partial class MetapsionicPulsePowerSystem : BasePsionicPowerSystem<MetapsionicPulsePowerComponent, MetapsionicPulseActionEvent>
 {
     [Dependency] private readonly EntityLookupSystem _lookupSystem = default!;
 

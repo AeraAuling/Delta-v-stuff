@@ -22,7 +22,7 @@ public sealed partial class PsionicSystem : EntitySystem
     [Dependency] private readonly EntityLookupSystem _lookupSystem = default!;
     [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
     [Dependency] private readonly SharedStunSystem _stunSystem = default!;
-    [Dependency] private readonly SharedStutteringSystem  _stutteringSystem = default!;
+    [Dependency] private readonly SharedStutteringSystem _stutteringSystem = default!;
 
     public override void Initialize()
     {

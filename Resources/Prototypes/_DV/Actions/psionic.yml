@@ -92,7 +92,7 @@
 
 - type: entity
   parent: BasePsionicAction
-  id: ActionPyrokinesis
+  id: ActionNewPyrokinesis
   name: Pyrokinesis
   description: Light a flammable target on fire.
   components:
@@ -101,11 +101,13 @@
       sprite: _DV/Interface/Actions/actions_psionics.rsi
       state: pyrokinesis
     useDelay: 50
+    raiseOnUser: true
   - type: TargetAction
-    range: 6
+    range: 20
     checkCanAccess: false
-  - type: EntityTargetAction
-    event: !type:PyrokinesisPowerActionEvent
+  - type: WorldTargetAction
+    event: !type:PyrokinesisActionEvent
+      prototype: ProjectileFireball
 
 - type: entity
   parent: BasePsionicAction
