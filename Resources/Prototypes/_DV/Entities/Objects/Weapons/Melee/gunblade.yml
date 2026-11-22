@@ -1,0 +1,56 @@
+- type: entity
+  parent: BaseItem
+  id: Gunblade
+  name: NT-01 Gunblade
+  description: A fantastical weapon made possible through the usage of plasteel and new techniques in component manufacturing. A bit unwieldy, but a strong weapon in the hands of those who master it.
+  components:
+  - type: Sharp
+  - type: Execution
+    doAfterDuration: 2.5
+  - type: Sprite
+    sprite: _DV/Objects/Weapons/Melee/gunblade.rsi
+    state: icon
+  - type: Item
+    size: Large
+  - type: Gun
+    fireRate: 2.5
+    availableModes:
+    - SemiAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/pistol.ogg
+  - type: ChamberMagazineAmmoProvider
+    soundRack:
+      path: /Audio/Weapons/Guns/Cock/pistol_cock.ogg
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazinePistolSpecial
+        insertSound: /Audio/Weapons/Guns/MagIn/pistol_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/pistol_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - MagazinePistolSpecial
+        whitelistFailPopup: gun-magazine-whitelist-fail
+      gun_chamber:
+        name: Chamber
+        priority: 1
+        whitelist:
+          tags:
+            - CartridgeSpecial
+  - type: AmmoCounter
+  - type: AltFireMelee
+    attackType: Heavy
+  - type: MeleeWeapon
+    attackRate: 1.5
+    wideAnimationRotation: -135
+    damage:
+      types:
+        Slash: 18
+    soundHit:
+      path: /Audio/Weapons/bladeslice.ogg
