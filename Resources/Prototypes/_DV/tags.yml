@@ -127,6 +127,9 @@
   id: MagazineUniversalMagnum
 
 - type: Tag
+  id: MagazineGunblade
+
+- type: Tag
   id: Magboots
 
 - type: Tag
@@ -326,3 +329,6 @@
 
 - type: Tag
   id: Acid40mm # Ammo tag for pacifier acid grenades
+
+- type: Tag
+  id: CartridgeGunblade # Ammo tag for gunblade cartridges

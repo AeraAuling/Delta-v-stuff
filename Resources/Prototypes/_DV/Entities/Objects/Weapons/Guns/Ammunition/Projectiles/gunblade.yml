@@ -1,0 +1,26 @@
+- type: entity
+  id: BulletGunblade
+  name: bullet (gunblade)
+  parent: BaseBullet
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 24
+
+- type: entity
+  parent: BaseBulletTrigger
+  id: BulletGunbladeExplosive
+  name: bullet (gunblade - explosive)
+  categories: [HideSpawnMenu]
+  components:
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: Default
+    totalIntensity: 1
+    intensitySlope: 1
+    maxIntensity: 1
+    tileBreakScale: 0.01
+  - type: TimedDespawn
+    lifetime: 0.08 # really short, shouldn't travel far at all

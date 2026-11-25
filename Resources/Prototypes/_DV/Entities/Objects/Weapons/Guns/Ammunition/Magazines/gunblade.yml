@@ -1,0 +1,61 @@
+- type: entity
+  abstract: true
+  parent: BaseItem
+  id: BaseMagazineGunblade
+  name: gunblade magazine
+  components:
+  - type: Tag
+    tags:
+    - MagazineGunblade
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    whitelist:
+      tags:
+      - CartridgeGunblade
+    capacity: 7
+  - type: Item
+    size: Small
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+  - type: Sprite
+    sprite: _DV/Objects/Weapons/Guns/Ammunition/Magazine/Pistol/pistol_special_mag.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: MagazineVisuals
+    magState: mag
+    steps: 6
+    zeroVisible: false
+  - type: Appearance
+
+- type: entity
+  parent: BaseMagazineGunblade
+  id: MagazineGunblade
+  description: 7 round magazine carrying 7 standard gunblade rounds
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeGunblade
+  - type: Sprite
+    layers:
+    - state: red
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+
+- type: entity
+  parent: BaseMagazineGunblade
+  id: MagazineGunbladeExplosive
+  name: explosive gunblade magazine
+  description: 5-round magazine carrying 5 standard gunblade rounds
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeGunbladeExplosive
+  - type: Sprite
+    layers:
+    - state: red
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]

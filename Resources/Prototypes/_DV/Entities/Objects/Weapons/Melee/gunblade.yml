@@ -29,28 +29,37 @@
     slots:
       gun_magazine:
         name: Magazine
-        startingItem: MagazinePistolSpecial
+        startingItem: MagazineGunblade
         insertSound: /Audio/Weapons/Guns/MagIn/pistol_magin.ogg
         ejectSound: /Audio/Weapons/Guns/MagOut/pistol_magout.ogg
         priority: 2
         whitelist:
           tags:
-            - MagazinePistolSpecial
+            - MagazineGunblade
         whitelistFailPopup: gun-magazine-whitelist-fail
       gun_chamber:
         name: Chamber
         priority: 1
         whitelist:
           tags:
-            - CartridgeSpecial
+            - CartridgeGunblade
   - type: AmmoCounter
   - type: AltFireMelee
     attackType: Heavy
   - type: MeleeWeapon
-    attackRate: 1.5
+    attackRate: 2
     wideAnimationRotation: -135
     damage:
       types:
-        Slash: 18
+        Slash: 13.5
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
+  - type: JumpAbility
+    jumpDistance: 1.5
+    jumpSound: /Audio/Effects/stealthoff.ogg
+  - type: ActionGrant
+    actions:
+    - ActionGravityJump
+  - type: ItemActionGrant
+    actions:
+    - ActionGravityJump

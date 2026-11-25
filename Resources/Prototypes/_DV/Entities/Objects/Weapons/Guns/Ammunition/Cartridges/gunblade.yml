@@ -1,0 +1,42 @@
+- type: entity
+  abstract: true
+  parent: BaseCartridge
+  id: BaseCartridgeGunblade
+  name: cartridge (gunblade)
+  components:
+  - type: Tag
+    tags:
+    - Cartridge
+    - CartridgeGunblade
+  - type: CartridgeAmmo
+    proto: BulletGunblade
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Ammunition/Casings/ammo_casing.rsi
+    layers:
+    - state: base
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: Appearance
+  - type: SpentAmmoVisuals
+  - type: StaticPrice
+    price: 10
+
+- type: entity
+  parent: BaseCartridgeGunblade
+  id: CartridgeGunblade
+  description: A unique cartridge made for gunblades.
+
+- type: entity
+  parent: BaseCartridgeGunblade
+  id: CartridgeGunbladeExplosive
+  name: cartridge (gunblade - explosive)
+  description: A gunblade cartridge filled with a timed explosive for close range combat.
+  components:
+  - type: CartridgeAmmo
+    proto: BulletGunbladeExplosive
+  - type: Sprite
+    layers:
+    - state: base
+      map: [ "enum.AmmoVisualLayers.Base" ]
+    - state: tip
+      map: [ "enum.AmmoVisualLayers.Tip" ]
+      color: "#800000"
